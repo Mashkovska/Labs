@@ -1,80 +1,91 @@
 package clothesshop;
 
-import java.util.ArrayList;
-import java.util.Comparator;
+import enums.ClothesBrend;
+import enums.ClothesType;
 
-
-public class Clothes {
+public abstract class Clothes {
 
 	private ClothesType type;
-	private ClothesBrend brend;
-	private String nameOfCloth;
+	ClothesBrend brend;
+
+	String nameOfCloth;
 	double price;
 	double size;
-	private int amount;
-	
-	
+	int amount;
+	static String length;
+
 	public Clothes(ClothesType type, ClothesBrend brend, String nameOfCloth, double price, double size, int amount) {
-		setClothesType(type);
-		setClothesBrend(brend);
+
+		setType(type);
 		setNameOfCloth(nameOfCloth);
 		setPrice(price);
 		setSize(size);
 		setAmount(amount);
-		
+		setLength(length);
+		setBrend(brend);
+
 	}
 
+	@Override
+	public String toString() {
+		return "Name = " + nameOfCloth + " Type = " + type + " Brend = " + brend + " Amount = " + amount + " Price = "
+				+ price;
+	}
 
-	
 	public ClothesType getType() {
 		return type;
 	}
-	
-	public void setClothesType(ClothesType type) {
-		amount+= 1;
-		this.type = type;
-	}
-	
+
 	public ClothesBrend getBrend() {
 		return brend;
 	}
-	
-	public void setClothesBrend(ClothesBrend brend) {
+
+	public void setBrend(ClothesBrend brend) {
 		this.brend = brend;
 	}
-	 
-	public  String getNameOfCloth() {
+
+	public String getNameOfCloth() {
 		return nameOfCloth;
 	}
-	
-	public void  setNameOfCloth(String nameOfCloth) {
+
+	public void setNameOfCloth(String nameOfCloth) {
 		this.nameOfCloth = nameOfCloth;
 	}
-	
-    public double getPrice() {
-	    return price;
+
+	public double getPrice() {
+		return price;
 	}
 
-	   public void setPrice(double price) {
-	       this.price = price;
-    }
-	   
-	   public double getSize() {
-		   return size;
-	   }
-	   
-	   public void setSize(double size) {
-		   this.size = size;
-	   }
-	
-	 public int getAmount() {
-	        return amount;
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
-	    public void setAmount(int amount) {
-	        this.amount = amount;
-    }
-	
-		
-	    
+	public double getSize() {
+		return size;
+	}
+
+	public void setSize(double size) {
+		this.size = size;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public String getLength() {
+		return length;
+	}
+
+	public void setLength(String length) {
+		this.length = length;
+	}
+
+	public void setType(ClothesType type) {
+		this.type = type;
+	}
+
 }
